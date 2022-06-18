@@ -1,5 +1,5 @@
 import { getGitConfig, execute, invoke } from './utils'
-import { defineTask, click } from '@statstic/click'
+import { defineTask, click } from '@tossdev/click'
 
 async function resetGitRepos() {
   const config = getGitConfig()

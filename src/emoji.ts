@@ -1,4 +1,4 @@
-import { defineTask } from '@statstic/click'
+import { defineTask } from '@tossdev/click'
 
 export const emojiTask = defineTask({
   name: 'emoji',
