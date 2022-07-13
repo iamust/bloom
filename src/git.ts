@@ -18,7 +18,7 @@ async function resetGitInfo() {
 }
 
 async function resetCommits() {
-  await invoke('md @repository')
+  await invoke('mkdir @repository')
   await invoke('mv .git @repository')
   await invoke('git -C @repository add .')
   await invoke('git -C @repository commit -m "reset repository"')
