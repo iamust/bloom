@@ -14,7 +14,7 @@ function render(data: unknown[][]) {
 
 export const archeyTask = defineTask({
   name: 'archey',
-  about: 'Show info',
+  about: 'Show system info',
   handler(args, opts) {
     if (opts.user) {
       const { username, homedir, shell } = os.userInfo()
