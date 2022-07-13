@@ -1,16 +1,15 @@
 import { getGitConfig, execute, invoke } from './utils'
 import { defineTask, click } from '@tossdev/click'
 
-async function resetGitRepos() {
+async function resetGitInfo() {
   const config = getGitConfig()
-  const trashCommand = 'trash .git'
   const { trash } = await click.prompt([
-    { name: 'trash', type: 'confirm', message: trashCommand }
+    { name: 'trash', type: 'confirm', message: 'trash .git' }
   ])
 
   if (!trash) { process.exit(0) }
 
-  await execute(trashCommand)
+  await execute('trash .git')
   await execute('git init')
 
   await invoke(`git config user.name "${config.user.name}"`)
@@ -18,10 +17,32 @@ async function resetGitRepos() {
   await invoke(`git remote add origin ${config['remote "origin"'].url}`)
 }
 
-export const reposTask = defineTask({
-  name: 'repos',
-  about: 'Reset repository',
-  handler() {
-    resetGitRepos().catch(console.error)
+async function resetCommits() {
+  await invoke('md @repository')
+  await invoke('mv .git @repository')
+  await invoke('git -C @repository add .')
+  await invoke('git -C @repository commit -m "reset repository"')
+  await invoke('mv @repository/.git .')
+  await invoke('trash @repository')
+}
+
+export const gitTask = defineTask({
+  name: 'git',
+  about: 'Git tasks',
+  handler(args, opts) {
+    async function runTask() {
+      switch (args[1]) {
+        case 'rework':
+          await resetGitInfo()
+          break
+        case 'reset-commits':
+          await resetCommits()
+          break
+        default:
+          break
+      }
+    }
+
+    runTask().catch(console.error)
   }
 })

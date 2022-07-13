@@ -2,11 +2,11 @@
 const { click } = require('@tossdev/click')
 const { archeyTask } = require('../dist/archey')
 const { emojiTask } = require('../dist/emoji')
-const { reposTask } = require('../dist/repos')
+const { gitTask } = require('../dist/git')
 
 click
   .program('bloom')
   .addTask(archeyTask)
   .addTask(emojiTask)
-  .addTask(reposTask)
+  .addTask(gitTask)
   .execute()
