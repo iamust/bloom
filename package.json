@@ -1,6 +1,6 @@
 {
   "name": "@tossdev/bloom",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
   "bin": {
     "bloom": "bin/bloom.js"
