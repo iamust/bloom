@@ -6,7 +6,7 @@
     "bloom": "bin/bloom.js"
   },
   "dependencies": {
-    "@tossdev/remix": "^1.0.3",
+    "@tossdev/remix": "^1.0.5",
     "chalk": "^4.1.2",
     "emojilib": "^3.0.8",
     "ini": "^2.0.0",
@@ -17,6 +17,6 @@
   "devDependencies": {
     "@types/ini": "^1.3.31",
     "@types/node": "^17.0.45",
-    "typescript": "^4.9.4"
+    "typescript": "^4.7.4"
   }
 }
