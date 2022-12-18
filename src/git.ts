@@ -1,9 +1,9 @@
 import { getGitConfig, execute, invoke } from './utils'
-import { defineTask, click } from '@tossdev/click'
+import { defineTask, remix } from '@tossdev/remix'
 
 async function resetGitInfo() {
   const config = getGitConfig()
-  const { trash } = await click.prompt([
+  const { trash } = await remix.prompt([
     { name: 'trash', type: 'confirm', message: 'trash .git' }
   ])
 

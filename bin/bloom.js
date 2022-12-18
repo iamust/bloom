@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-const { click } = require('@tossdev/click')
+const { remix } = require('@tossdev/remix')
 const { archeyTask } = require('../dist/archey')
 const { emojiTask } = require('../dist/emoji')
 const { gitTask } = require('../dist/git')
 
-click
+remix
   .program('bloom')
   .addTask(archeyTask)
   .addTask(emojiTask)

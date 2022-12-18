@@ -1,4 +1,4 @@
-import { defineTask } from '@tossdev/click'
+import { defineTask } from '@tossdev/remix'
 
 export const emojiTask = defineTask({
   name: 'emoji',

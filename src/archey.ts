@@ -1,5 +1,5 @@
 import { table, getBorderCharacters } from 'table'
-import { defineTask } from '@tossdev/click'
+import { defineTask } from '@tossdev/remix'
 import pbs from 'pretty-bytes'
 import ms from 'ms'
 import os from 'os'
